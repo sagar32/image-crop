@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="photoSelectDemo">
+
+<head>
+    <meta charset='utf-8'>
+  <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  />
+  <script data-require="jquery@*" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script data-require="angularjs@1.5.8" data-semver="1.5.8" src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js"></script>
+  <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script data-require="tether@*" data-semver="1.4.0" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script data-require="ui-bootstrap@1.3.3" data-semver="1.3.3" src="https://cdn.rawgit.com/angular-ui/bootstrap/gh-pages/ui-bootstrap-tpls-1.3.3.js"></script>
+  <script src="upload.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.js"></script>
+   <script src="node_modules/angular-image-cropper/dist/angular-image-cropper.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <script src="choosePhoto.js"></script>
+  <script src="panZoom.js"></script>
+  <script src="dirPagination.js"></script>
+
+</head>
+
+<body>
+  <div ng-controller="myController">
+
+    <i class="material-icons" style="position:absolute; top: 5px; left:5px; color:orange; cursor:pointer; z-index: 10" choose-photo-modal-directive=""
+      on-select-callback="selectedPhoto(arg1)" max-width="700" ratio="2">photo_camera</i>
+  </div>
+</body>
+
+</html>
