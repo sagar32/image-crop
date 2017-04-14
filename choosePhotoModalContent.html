@@ -37,10 +37,13 @@
 
                     </div>
                     <div ng-show="files.length > 0">
-                        <pan-zoom-url image-width="actWidth" image-height="actHeight" imageurl="files[0]" upload-function="getCropURL"></pan-zoom-url>
-                        {{ files[0] | convertToSrc}}
+                        <!--<pan-zoom-url image-width="actWidth" image-height="actHeight" imageurl="files[0]" upload-function="getCropURL"></pan-zoom-url>-->
+                        
                          <div ng-controller="mainController as vm">
-        <image-cropper image-url="{{ files[0] | convertToSrc}}"
+                             <input type="file" ngModel="tt" ng-change="chnageFile()" file-model="myFile" /> <button ng-click="chnageFile()">click</button>
+        <!--<image-cropper image-url="{{ files[0] | convertToSrc}}"-->
+             {{showImg}}
+        <image-cropper ng-if="showImg"  image-url="{{imgBase64}}"
                        width="640"
                        height="480"
                        show-controls="{{vm.showControls}}"
@@ -49,7 +52,7 @@
                        api="vm.cropperApi"
                        crop-callback="vm.updateResultImage"
                        action-labels="vm.myButtonLabels"
-        ></image-cropper>
+        ></image-cropper> 
 
         <div class="result">
           <img class="frame" ng-src="{{vm.resultImage}}">
