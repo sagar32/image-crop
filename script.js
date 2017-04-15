@@ -28,29 +28,34 @@
 
     };
   });
-  app.directive('fileModel', ['$parse', function ($parse) {
-    return {
-      restrict: 'A',
-      link: function (scope, element, attrs) {
-        var model = $parse(attrs.fileModel);
-        var modelSetter = model.assign;
+  // app.directive('fileModel', ['$parse', function ($parse) {
+  //   return {
+  //     restrict: 'A',
+  //     link: function (scope, element, attrs) {
+  //       var model = $parse(attrs.fileModel);
+  //       var modelSetter = model.assign;
 
-        element.bind('change', function () {
-          scope.$apply(function () {
-            modelSetter(scope, element[0].files[0]);
-            scope.chnageFile();
-          });
-        });
-      }
-    };
-  }]);
+  //       element.bind('change', function () {
+  //         scope.$apply(function () {
+  //           modelSetter(scope, element[0].files[0]);
+  //           scope.chnageFile();
+  //         });
+  //       });
+  //     }
+  //   };
+  // }]);
   app.controller('mainController', ['$scope', function ($scope) {
     /* jshint validthis: true */
     var vm = this;
+    $scope.$watch('file1',function(){
+      console.log("fine.. ");
+      console.log($scope.file1);
+      $scope.chnageFile();
+    },true);
     $scope.showImg = false;
     $scope.chnageFile = function () {
       $scope.showImg = false;
-      var file = $scope.myFile;
+      var file = $scope.file1;
 
       console.log('file is ');
       console.dir(file);

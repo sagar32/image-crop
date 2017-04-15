@@ -18,10 +18,10 @@
 
 
 
-        <div id="canvas" style="position:relative">
+        <div id="canvas" style="position:relative" ng-controller="mainController as vm">
             <div ng-show="showMode=='Upload'">
                 <div id="imageSizerDrop" ng-style="{'max-width':maxWidth+'px','max-height':(maxWidth/ratio)+'px'}" style=" width:100%;height:0;margin:auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0;">
-                    <!--<div ng-show="files.length == 0" ngf-drop ngf-select ng-model="file" class="drop-box2" ngf-fix-orientation="true" ngf-drag-over-class="'dragover'"
+                    <div  ng-show="!showImg" ngf-drop ngf-select ng-model="file1" class="drop-box2" ngf-fix-orientation="true" ngf-drag-over-class="'dragover'"
                         ngf-multiple="false" ngf-allow-dir="true" accept="image/*" ng-style="{'max-width':(maxWidth+10)+'px'}"
                         style="display:inline-block; width:100%; height:100%;">
 
@@ -35,12 +35,12 @@
                         </span>
                         </div>
 
-                    </div>-->
+                    </div>
                     <div >
                         <!--<pan-zoom-url image-width="actWidth" image-height="actHeight" imageurl="files[0]" upload-function="getCropURL"></pan-zoom-url>-->
 
-                        <div ng-controller="mainController as vm">
-                            <input type="file"  file-model="myFile" />
+                        <div >
+                            <!--<input type="file"  file-model="myFile" />-->
                             <!--<image-cropper image-url="{{ files[0] | convertToSrc}}"-->
                             <image-cropper ng-if="showImg" image-url="{{imgBase64}}" width="640" height="480" show-controls="{{vm.showControls}}" fit-on-init="false"
                                 center-on-init="true" api="vm.cropperApi" crop-callback="vm.updateResultImage" action-labels="vm.myButtonLabels"></image-cropper>
