@@ -31,6 +31,12 @@ textarea {
 }
 */
 
+/*result image */
+.resultImg{
+    height:150px;
+    padding: 5px;
+    border: 1px solid #000;
+}
 /* Registration DOB DateField */
 .datefield { 
     display: inline; 

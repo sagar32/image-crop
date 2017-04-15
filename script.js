@@ -77,7 +77,7 @@
     };
 
     // Some cropper options.
-    vm.imageUrl = 'images/unsplash_' + getRandomInt(1, 7) + '.jpg';
+    // vm.imageUrl = 'images/unsplash_' + getRandomInt(1, 7) + '.jpg';
     vm.showControls = true;
     vm.fit = true;
 
@@ -107,9 +107,7 @@
     /**
      * Returns a random integer between min (inclusive) and max (inclusive)
      */
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    
   }]);
   function myController($scope) {
     $scope.test = '1d23'
