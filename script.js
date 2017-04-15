@@ -38,6 +38,7 @@
         element.bind('change', function () {
           scope.$apply(function () {
             modelSetter(scope, element[0].files[0]);
+            scope.chnageFile();
           });
         });
       }
@@ -48,7 +49,7 @@
     var vm = this;
     $scope.showImg = false;
     $scope.chnageFile = function () {
-
+      $scope.showImg = false;
       var file = $scope.myFile;
 
       console.log('file is ');
@@ -61,7 +62,7 @@
         $scope.$apply(function () {
           $scope.showImg = true;
         });
-        alert($scope.imgBase64);
+        // alert($scope.imgBase64);
       }, false);
 
       if (file) {
@@ -73,7 +74,7 @@
     // Some cropper options.
     vm.imageUrl = 'images/unsplash_' + getRandomInt(1, 7) + '.jpg';
     vm.showControls = true;
-    vm.fit = false;
+    vm.fit = true;
 
     vm.myButtonLabels = {
       rotateLeft: ' (rotate left) ',
